@@ -1,0 +1,15 @@
+{
+  "edition": "2027",
+  "checkedAt": "2026-11-19",
+  "latestEditionSeen": null,
+  "updateAvailable": false,
+  "checkOk": false,
+  "sourcesTried": [
+    {
+      "source": "topuniversities.com",
+      "ok": false,
+      "error": "fetch failed"
+    }
+  ],
+  "note": "The QS site could not be read from this run (blocked or unreachable), so no newer edition could be confirmed or ruled out. Check topuniversities.com by hand."
+}

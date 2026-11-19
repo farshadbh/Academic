@@ -1,0 +1,74 @@
+{
+  "country": "SG",
+  "verifiedAt": "2026-11-03",
+  "people": [
+    {
+      "id": "sg-kuang",
+      "name": "Kuang Sze Chiang, Kevin",
+      "surname": "Kuang",
+      "title": "Associate Professor",
+      "university": "National University of Singapore",
+      "universitySlug": "nus",
+      "state": "Singapore",
+      "field": "structural",
+      "researchFocus": "Structural health monitoring and structural concrete retrofitting.",
+      "email": "ceeksck@nus.edu.sg",
+      "profileUrl": "https://cde.nus.edu.sg/cee/about-us/people/faculty-staff-by-teaching-area/",
+      "sourceUrl": "https://cde.nus.edu.sg/cee/about-us/people/faculty-staff-by-teaching-area/"
+    },
+    {
+      "id": "sg-liew",
+      "name": "Liew Yat Yuen, Richard",
+      "surname": "Liew",
+      "title": "Professor",
+      "university": "National University of Singapore",
+      "universitySlug": "nus",
+      "state": "Singapore",
+      "field": "structural",
+      "researchFocus": "Steel and composite structures, fire resistance and impact behaviour of structures.",
+      "email": "ceeljy@nus.edu.sg",
+      "profileUrl": "https://cde.nus.edu.sg/cee/about-us/people/faculty-staff-by-teaching-area/",
+      "sourceUrl": "https://cde.nus.edu.sg/cee/about-us/people/faculty-staff-by-teaching-area/"
+    },
+    {
+      "email": "kanmy@comp.nus.edu.sg",
+      "field": "artificial-intelligence",
+      "id": "cs-min-yen-kan-nus",
+      "name": "Min-Yen Kan",
+      "profileUrl": "https://www.comp.nus.edu.sg/cs/people/kanmy/",
+      "researchFocus": "Research interests span digital libraries, natural language processing and information retrieval, including scholarly digital libraries, large language models, retrieval-augmented generation and recommendation systems.",
+      "sourceUrl": "https://www.comp.nus.edu.sg/cs/people/kanmy/",
+      "state": "Singapore",
+      "title": "Associate Professor of Computer Science",
+      "university": "National University of Singapore",
+      "universitySlug": "nus"
+    },
+    {
+      "email": "dcsmsk@nus.edu.sg",
+      "field": "artificial-intelligence",
+      "id": "cs-mohan-kankanhalli-nus",
+      "name": "Mohan Kankanhalli",
+      "profileUrl": "https://nusgs.nus.edu.sg/thesis-advisors/dcsmsk",
+      "researchFocus": "Research interests are in multimodal computing, computer vision and trustworthy AI, including image and video understanding, visual saliency, content authentication and privacy.",
+      "sourceUrl": "https://nusgs.nus.edu.sg/thesis-advisors/dcsmsk",
+      "state": "Singapore",
+      "title": "Provost's Chair Professor of Computer Science",
+      "university": "National University of Singapore",
+      "universitySlug": "nus"
+    },
+    {
+      "id": "sg-pang",
+      "name": "Pang Sze Dai",
+      "surname": "Pang",
+      "title": "Dean's Chair Associate Professor, Deputy Head (Academic Matters)",
+      "university": "National University of Singapore",
+      "universitySlug": "nus",
+      "state": "Singapore",
+      "field": "construction",
+      "researchFocus": "Sustainable construction and structural engineering: low-carbon cementitious materials, waste mineralisation and resilient modular structural systems.",
+      "email": "ceepsd@nus.edu.sg",
+      "profileUrl": "https://cde.nus.edu.sg/cee/staff/pang-sze-dai/",
+      "sourceUrl": "https://cde.nus.edu.sg/cee/staff/pang-sze-dai/"
+    }
+  ]
+}
