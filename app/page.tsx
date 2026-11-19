@@ -1,17 +1,20 @@
+import { AcademicsTeaser } from '@/components/academics/academics-teaser'
 import { CityGrid } from '@/components/home/city-grid'
 import { Hero } from '@/components/home/hero'
 import { JobSection } from '@/components/home/job-section'
 import { RoleCategories } from '@/components/home/role-categories'
 import { JsonLd } from '@/components/json-ld'
 import { SITE_NAME, SITE_URL } from '@/lib/format'
+import { getAcademicPositions } from '@/lib/academic-positions'
 import { getFeaturedJobs, getJobCounts, getLatestJobs, getVisaSponsoredJobs } from '@/lib/jobs'
 
 export default async function HomePage() {
-  const [featured, academic, visa, counts] = await Promise.all([
+  const [featured, academic, visa, counts, positions] = await Promise.all([
     getFeaturedJobs(6),
     getLatestJobs('academic', 4),
     getVisaSponsoredJobs(4),
     getJobCounts(),
+    getAcademicPositions(),
   ])
 
   const websiteJsonLd = {
@@ -30,6 +33,19 @@ export default async function HomePage() {
     <>
       <JsonLd data={websiteJsonLd} />
       <Hero stats={counts} />
+      {/*
+       * Section order on this site: Academic Position first, PhD Scholarship,
+       * Find your supervisor last. Universities worldwide stays its own page.
+       */}
+      <JobSection
+        id="academic-positions"
+        eyebrow="Academic Position"
+        title="Academic positions"
+        description="University positions from postdoc to professor — lecturers, research fellows and heads of school at Australian universities."
+        jobs={positions}
+        href="/academic-positions"
+        linkLabel="All academic positions"
+      />
       <JobSection
         id="featured-jobs"
         eyebrow="Featured"
@@ -60,6 +76,7 @@ export default async function HomePage() {
         linkLabel="All visa sponsored scholarships"
       />
       <CityGrid counts={counts.byCity} />
+      <AcademicsTeaser />
     </>
   )
 }

@@ -41,6 +41,12 @@ export function Hero({ stats }: HeroProps) {
         <div className="mt-5 flex flex-wrap items-center gap-2 text-sm text-white/80">
           <span>Popular:</span>
           <Link
+            href="/academic-positions"
+            className="rounded-full border border-white/20 px-3 py-1 transition-colors hover:border-accent hover:text-white"
+          >
+            Academic Positions
+          </Link>
+          <Link
             href="/academic?role=phd-scholarship"
             className="rounded-full border border-white/20 px-3 py-1 transition-colors hover:border-accent hover:text-white"
           >

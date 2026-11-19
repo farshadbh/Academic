@@ -23,11 +23,19 @@ export function SectorBadge({ sector }: { sector: Job['sector'] }) {
   )
 }
 
-export function JobCard({ job }: { job: Job }) {
+/**
+ * Card link defaults to the job's detail page on this site. Academic Position
+ * cards pass the original posting URL instead — those roles live in a separate
+ * dataset (data/academic-positions.json) with no detail page here, so the card
+ * opens the source ad in a new tab.
+ */
+export function JobCard({ job, href }: { job: Job; href?: string }) {
   const attribution = job.source ? SOURCE_ATTRIBUTION[job.source] : undefined
   // Facts the ad simply does not state are left out rather than filled with a
   // placeholder, so every line on the card is real information.
   const salary = formatSalary(job)
+  const detailHref = href ?? `/jobs/${job.slug}`
+  const isExternal = detailHref.startsWith('http')
 
   return (
     <article className="group relative flex h-full flex-col rounded-lg border bg-card p-5 transition-all hover:border-primary/40 hover:shadow-md">
@@ -41,7 +49,11 @@ export function JobCard({ job }: { job: Job }) {
       </div>
 
       <h3 className="mt-3 text-base leading-snug font-semibold text-pretty">
-        <Link href={`/jobs/${job.slug}`} className="after:absolute after:inset-0 group-hover:text-primary">
+        <Link
+          href={detailHref}
+          {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+          className="after:absolute after:inset-0 group-hover:text-primary"
+        >
           {job.title}
         </Link>
       </h3>

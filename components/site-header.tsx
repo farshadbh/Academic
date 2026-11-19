@@ -7,7 +7,12 @@ import { useEffect, useState } from 'react'
 import { Logo } from '@/components/logo'
 import { cn } from '@/lib/utils'
 
+/*
+ * Section order on this site: Academic Position first, PhD Scholarships,
+ * Find a supervisor, Universities worldwide. The header follows that order.
+ */
 const NAV_ITEMS = [
+  { href: '/academic-positions', label: 'Academic Position' },
   { href: '/academic', label: 'PhD Scholarships' },
   { href: '/supervisors', label: 'Find a supervisor' },
   { href: '/universities', label: 'Universities' },
@@ -67,7 +72,7 @@ export function SiteHeader() {
         <Logo />
 
         {/*
-         * Six links plus two account buttons only fit on one line from 1280px up,
+         * Eight links plus two account buttons only fit on one line from 1280px up,
          * so the nav appears at xl and the hamburger covers everything narrower.
          * Everything is nowrap: a wrapped label is what made the bar look ragged.
          */}
@@ -80,7 +85,7 @@ export function SiteHeader() {
                 href={item.href}
                 aria-current={active ? 'page' : undefined}
                 className={cn(
-                  'rounded-md px-2.5 py-2 text-sm font-medium whitespace-nowrap transition-colors hover:bg-muted hover:text-foreground',
+                  'rounded-md px-2 py-2 text-sm font-medium whitespace-nowrap transition-colors hover:bg-muted hover:text-foreground',
                   active ? 'text-primary' : 'text-muted-foreground',
                 )}
               >

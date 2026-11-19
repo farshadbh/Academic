@@ -1,14 +1,20 @@
 # PhD Scholarship
 
-A specialist job board for **PhD scholarships in structural and civil engineering** — fully funded PhD positions at Australian and international universities — plus a directory of supervisors and universities to help candidates find who works on their topic.
+A specialist job board for **PhD scholarships in structural and civil engineering** — fully funded PhD positions at Australian and international universities — plus academic positions, a directory of supervisors and universities to help candidates find who works on their topic.
 
 Live site: https://phd-scholarship.vercel.app (Vercel project to be created — see below)
 
-Split from `farshadbh/structurajobaus` (SE Jobs Australia) on 2026-11-19: the original site carried academic and industry roles together, with PhD scholarships as one role inside its academic section. This repo is the PhD-scholarships half, completely separate from the `academic-position` repo. Industry roles were removed completely in the split; this repo publishes PhD scholarships only. The supervisor/academics directory (`/supervisors`, `/universities`, `/academic/people`) moved here with it, because a PhD hunt starts with "who works on this?".
+Split from `farshadbh/structurajobaus` (SE Jobs Australia) on 2026-11-19: the original site carried academic and industry roles together, with PhD scholarships as one role inside its academic section. Industry roles were removed completely in the split; this repo publishes no industry jobs. The supervisor/academics directory (`/supervisors`, `/universities`, `/academic/people`) moved here with it, because a PhD hunt starts with "who works on this?".
+
+Sections, in order: **1) Academic Position** (`/academic-positions`) — university positions from postdoc to professor, teaching and research roles only; **2) PhD Scholarship** (`/academic`, `/jobs`) — the 72 PhD scholarships in `data/jobs.json`; **3) Find a supervisor** (`/supervisors`); **4) Universities worldwide** (`/universities`, QS 2027 Top 500). All four sections live in this repo; nothing from this site goes to `farshadbh/structurajobaus`, which stays a separate Academic Position site.
 
 ## Scholarships in this snapshot
 
 `data/jobs.json` is the live snapshot refreshed daily by `scripts/ingest-jobs.mjs`, plus PhD scholarships collected directly from universities' official websites — see `data/phd-sources.md` for the source URL of every collected listing, the universities checked, and the date each was checked. A university with no open structural/civil PhD scholarship is recorded there as zero; listings are never invented and never copied from aggregators.
+
+## Academic positions (`/academic-positions`)
+
+The 4 university positions (postdoc to professor) live in a separate snapshot, `data/academic-positions.json`, read by `lib/academic-positions.ts` — deliberately NOT in `data/jobs.json`, so the nightly PhD ingest never touches them and they never leak into the PhD counts, hero stats or `/jobs` search. The cards on `/academic-positions` and on the home page link out to the original posting (Jooble / the university careers page); these roles have no detail page on this site. Both UQ Brisbane lecturer listings are kept as advertised (different Jooble IDs) and are not deduplicated.
 
 ## Stack
 

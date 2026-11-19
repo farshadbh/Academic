@@ -17,6 +17,10 @@ const updatedLabel = DATA_UPDATED_AT
 export function SiteFooter() {
   const columns = [
     {
+      title: 'Academic Position',
+      links: [{ href: '/academic-positions', label: 'All academic positions' }],
+    },
+    {
       title: 'PhD Scholarship',
       links: ACADEMIC_ROLES.map((role) => ({ href: `/academic?role=${role.slug}`, label: role.name })),
     },
@@ -32,8 +36,8 @@ export function SiteFooter() {
         <div className="lg:col-span-2">
           <Logo inverted />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-primary-foreground/80">
-            The specialist job board for PhD scholarships in structural and civil engineering —
-            and the supervisors behind them.
+            The specialist job board for academic positions and PhD scholarships in structural and civil
+            engineering — and the supervisors behind them.
           </p>
           {updatedLabel && (
             <p className="mt-4 font-mono text-xs text-primary-foreground/70">
