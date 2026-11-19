@@ -6,7 +6,7 @@ import { RoleCategories } from '@/components/home/role-categories'
 import { JsonLd } from '@/components/json-ld'
 import { SITE_NAME, SITE_URL } from '@/lib/format'
 import { getAcademicPositions } from '@/lib/academic-positions'
-import { getFeaturedJobs, getJobCounts, getLatestJobs, getVisaSponsoredJobs } from '@/lib/jobs'
+import { getFeaturedJobs, getJobCounts, getLatestJobs, getVisaSponsoredJobs, DATA_UPDATED_AT } from '@/lib/jobs'
 
 export default async function HomePage() {
   const [featured, academic, visa, counts, positions] = await Promise.all([
@@ -32,7 +32,7 @@ export default async function HomePage() {
   return (
     <>
       <JsonLd data={websiteJsonLd} />
-      <Hero stats={counts} />
+      <Hero stats={counts} updatedAt={DATA_UPDATED_AT} />
       {/*
        * Section order on this site: Academic Position first, PhD Scholarship,
        * Find your supervisor last. Universities worldwide stays its own page.

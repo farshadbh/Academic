@@ -45,6 +45,12 @@ export interface Job {
   visaSponsorship: boolean
   featured: boolean
   postedAt: string
+  /**
+   * Last time the source ad changed. Absent on listings the feed never
+   * re-reported: callers fall back to postedAt, so "Updated" never shows a
+   * blank or an invented date.
+   */
+  updatedAt?: string
   /** Absent when the listing states no closing date (open until filled / rolling review). */
   closingDate?: string
   summary: string

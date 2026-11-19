@@ -44,6 +44,23 @@ export function formatDate(iso: string) {
   return dateFormatter.format(new Date(`${iso}T00:00:00Z`))
 }
 
+/**
+ * Short relative age ("just now", "12m ago", "3h ago", "2d ago") for the live
+ * freshness line. Returns null for an unparseable value so callers can fall
+ * back to a plain label instead of printing nonsense.
+ */
+export function formatRelativeTime(iso: string, now = new Date()) {
+  const then = new Date(iso).getTime()
+  if (Number.isNaN(then)) return null
+  const diffMs = now.getTime() - then
+  if (diffMs < 45_000) return 'just now'
+  const minutes = Math.floor(diffMs / 60_000)
+  if (minutes < 60) return `${minutes}m ago`
+  const hours = Math.floor(minutes / 60)
+  if (hours < 24) return `${hours}h ago`
+  return `${Math.floor(hours / 24)}d ago`
+}
+
 export const WORK_ARRANGEMENT_LABEL = {
   onsite: 'On-site',
   hybrid: 'Hybrid',
